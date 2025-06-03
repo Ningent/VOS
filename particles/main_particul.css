@@ -1,0 +1,60 @@
+/* Style général */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #0a0a12 0%, #000000 100%);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Conteneur des particules */
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+  }
+  
+  /* Style de chaque particule */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(0.8px);
+    will-change: transform, opacity;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.7; }
+  }
+  
+  .shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(white, transparent);
+    transform: rotate(150deg);
+    animation: shoot 1.5s ease-out forwards;
+    opacity: 0.8;
+    z-index: 1;
+  }
+  @keyframes shoot {
+    0% { transform: translate(0, 0) rotate(150deg); opacity: 1; }
+    100% { transform: translate(200px, 200px) rotate(150deg); opacity: 0; }
+  }
+
+
+  @keyframes planetFloat {
+    0%, 100% { transform: scale(1) translate(0, 0); }
+    50% { transform: scale(1.05) translate(10px, -10px); }
+  }
+  
